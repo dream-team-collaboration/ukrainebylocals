@@ -18,5 +18,13 @@ module Ukrainebylocals
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.generators do |g|
+      g.test_framework  nil #to skip test framework
+      g.assets  false
+      g.helper false
+      g.stylesheets false
+      g.fixture false
+      g.jbuilder false
+    end
   end
 end
