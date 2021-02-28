@@ -15,6 +15,16 @@
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
+  
+  <div>
+    <% tour.photos.each do |photo| %>
+      <%= hidden_field :tour, :photos, multiple: true, value: photo.identifier %>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.file_field :photos, multiple: true %>
+  </div>
 
   <div class="field">
     <%= form.label :body %>
