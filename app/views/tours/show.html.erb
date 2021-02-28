@@ -6,6 +6,12 @@
 </p>
 
 <p>
+  <% @tour.photos.each do |photo| %>
+    <%= image_tag(photo.show.url) %> 
+  <% end %>
+</p>
+
+<p>
   <strong>Body:</strong>
   <%= @tour.body %>
 </p>
