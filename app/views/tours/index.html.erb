@@ -16,8 +16,10 @@
         <td><%= image_tag(tour.photos.first.index.url) %></td>
         <td><%= tour.body %></td>
         <td><%= link_to 'Show', tour %></td>
-        <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
-        <td><%= link_to 'Destroy', tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Edit', edit_tour_path(tour) %></td>
+          <td><%= link_to 'Destroy', tour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -25,4 +27,4 @@
 
 <br>
 
-<%= link_to 'New Tour', new_tour_path %>
+<%= if user_signed_in? then link_to 'New Tour', new_tour_path end %>
