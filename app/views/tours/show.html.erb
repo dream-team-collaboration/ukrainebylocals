@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Title:</strong>
   <%= @tour.title %>
@@ -7,7 +5,7 @@
 
 <p>
   <% @tour.photos.each do |photo| %>
-    <%= image_tag(photo.show.url) %> 
+    <%= image_tag(photo.show.url) %>
   <% end %>
 </p>
 
