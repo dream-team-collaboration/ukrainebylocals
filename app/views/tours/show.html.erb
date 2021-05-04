@@ -10,8 +10,8 @@
 </p>
 
 <p>
-  <strong>Body:</strong>
-  <%= @tour.body %>
+  <strong>Description:</strong>
+  <%= @tour.description %>
 </p>
 
 <%= if user_signed_in? then link_to 'Edit', edit_tour_path(@tour) end %>
