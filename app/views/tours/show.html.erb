@@ -14,5 +14,25 @@
   <%= @tour.description %>
 </p>
 
+<p>
+  <strong>date:</strong>
+  <%= @tour.date %>
+</p>
+
+<p>
+  <strong>duration:</strong>
+  <%= @tour.duration %>
+</p>
+
+<p>
+  <strong>price:</strong>
+  <%= @tour.price %>
+</p>
+
+<p>
+  <strong>meeting_details:</strong>
+  <%= @tour.meeting_details %>
+</p>
+
 <%= if user_signed_in? then link_to 'Edit', edit_tour_path(@tour) end %>
 <%= link_to 'Back', tours_path %>
