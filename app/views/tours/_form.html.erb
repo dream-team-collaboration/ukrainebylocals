@@ -33,22 +33,96 @@
 
   <div class="field">
     <%= form.label :date %>
-    <%= form.text_area :date %>
+    <%= form.text_field :date %>
   </div>
 
   <div class="field">
     <%= form.label :duration %>
-    <%= form.text_area :duration %>
+    <%= form.text_field :duration %>
   </div>
 
   <div class="field">
     <%= form.label :price %>
-    <%= form.text_area :price %>
+    <%= form.text_field :price %>
   </div>
 
   <div class="field">
     <%= form.label :meeting_details %>
     <%= form.text_area :meeting_details %>
+  </div>
+
+  <div>
+    <ul>
+      <h2>Tour options</h2>
+      <%= form.fields_for :tour_options do |tour_options_form| %>
+        <li>
+          <p>
+            <%= tour_options_form.label :language %>
+            <%= tour_options_form.text_field :language %>
+          </p>
+
+          <p>
+            <%= tour_options_form.label :start_time_1 %>
+            <%= tour_options_form.text_field :start_time_1 %>
+          </p>
+
+          <p>
+            <%= tour_options_form.label :start_time_2 %>
+            <%= tour_options_form.text_field :start_time_2 %>
+          </p>
+
+          <p>
+            <%= tour_options_form.label :start_time_3 %>
+            <%= tour_options_form.text_field :start_time_3 %>
+          </p>
+
+          <p>
+            <%= tour_options_form.label :monday %>
+            <%= tour_options_form.text_field :monday %>
+          </p>
+        
+          <p>
+            <%= tour_options_form.label :tuesday %>
+            <%= tour_options_form.text_field :tuesday %>
+          </p>
+
+          <p>
+            <%= tour_options_form.label :wednesday %>
+            <%= tour_options_form.text_field :wednesday %>
+          </p>
+
+          <p>
+            <%= tour_options_form.label :thursday %>
+            <%= tour_options_form.text_field :thursday %>
+          </p>
+
+          <p>
+            <%= tour_options_form.label :friday %>
+            <%= tour_options_form.text_field :friday %>
+          </p>
+
+          <p>
+            <%= tour_options_form.label :saturday %>
+            <%= tour_options_form.text_field :saturday %>
+          </p>
+
+          <p>
+            <%= tour_options_form.label :sunday %>
+            <%= tour_options_form.text_field :sunday %>
+          </p>
+        
+          <p>
+            <%= tour_options_form.label :group %>
+            <%= tour_options_form.text_field :group %>
+          </p>
+
+          <p>
+            <%= tour_options_form.label :private %>
+            <%= tour_options_form.text_field :private %>
+          </p>
+        </li>
+      <% end %>
+    </ul>
   </div>
 
   <div class="actions">

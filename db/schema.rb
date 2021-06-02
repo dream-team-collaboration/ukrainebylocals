@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_02_230428) do
+ActiveRecord::Schema.define(version: 2021_05_29_101637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,26 @@ ActiveRecord::Schema.define(version: 2021_05_02_230428) do
     t.index ["tour_id"], name: "index_reservations_on_tour_id"
   end
 
+  create_table "tour_options", force: :cascade do |t|
+    t.string "language"
+    t.time "start_time_1"
+    t.time "start_time_2"
+    t.time "start_time_3"
+    t.boolean "monday"
+    t.boolean "tuesday"
+    t.boolean "wednesday"
+    t.boolean "thursday"
+    t.boolean "friday"
+    t.boolean "saturday"
+    t.boolean "sunday"
+    t.boolean "group"
+    t.boolean "private"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "tour_id", null: false
+    t.index ["tour_id"], name: "index_tour_options_on_tour_id"
+  end
+
   create_table "tours", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -70,4 +90,5 @@ ActiveRecord::Schema.define(version: 2021_05_02_230428) do
 
   add_foreign_key "reservations", "customers"
   add_foreign_key "reservations", "tours"
+  add_foreign_key "tour_options", "tours"
 end

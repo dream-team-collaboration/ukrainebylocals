@@ -14,10 +14,12 @@ class ToursController < ApplicationController
   # GET /tours/new
   def new
     @tour = Tour.new
+    @tour.tour_options.build
   end
 
   # GET /tours/1/edit
   def edit
+    
   end
 
   # POST /tours or /tours.json
@@ -66,6 +68,9 @@ class ToursController < ApplicationController
     # Only allow a list of trusted parameters through.
     def tour_params
       params.require(:tour).permit(:title, :description, :date, :duration, :price, 
-                                   :meeting_details, {photos: []})
+                                   :meeting_details, {photos: []}, 
+                                   tour_options_attributes: [:language, :start_time_1, :start_time_2,
+                                   :start_time_3, :monday, :thuesday, :wednesday, :thursday, :friday,
+                                   :saturday, :sunday, :group, :private])
     end
 end
